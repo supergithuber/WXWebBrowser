@@ -24,7 +24,7 @@
 /**
  加载本地html文件
 
- @param string 本地html文件名，需要把文件放在bundle中
+ @param string 本地html文件名，需要把文件放在bundle中，后缀是html
  */
 - (void)loadLocalHTMLString:(NSString *)string;
 /**
