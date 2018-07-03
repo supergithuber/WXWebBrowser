@@ -13,6 +13,10 @@
 		C710DF9320EA0A6C005D1DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DF9220EA0A6C005D1DAD /* Assets.xcassets */; };
 		C710DF9620EA0A6C005D1DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C710DF9420EA0A6C005D1DAD /* LaunchScreen.storyboard */; };
 		C710DF9920EA0A6C005D1DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DF9820EA0A6C005D1DAD /* main.m */; };
+		C710DFA520EB279E005D1DAD /* WXWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA320EB279E005D1DAD /* WXWebBrowser.m */; };
+		C710DFA620EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */; };
+		C710DFA820EB27CA005D1DAD /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA720EB27CA005D1DAD /* WKJSPOST.html */; };
+		C710DFAA20EB27DF005D1DAD /* testLocalWebview.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA920EB27DF005D1DAD /* testLocalWebview.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,12 @@
 		C710DF9520EA0A6C005D1DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C710DF9720EA0A6C005D1DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C710DF9820EA0A6C005D1DAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C710DFA120EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebBrowserScriptMeaasgeDelegate.h; sourceTree = "<group>"; };
+		C710DFA220EB279E005D1DAD /* WXWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXWebBrowser.h; sourceTree = "<group>"; };
+		C710DFA320EB279E005D1DAD /* WXWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebBrowser.m; sourceTree = "<group>"; };
+		C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebBrowserScriptMeaasgeDelegate.m; sourceTree = "<group>"; };
+		C710DFA720EB27CA005D1DAD /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
+		C710DFA920EB27DF005D1DAD /* testLocalWebview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testLocalWebview.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 		C710DF8820EA0A6B005D1DAD /* WXWebBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				C710DFA020EB2786005D1DAD /* htmlResources */,
+				C710DF9F20EB2761005D1DAD /* Browser */,
 				C710DF8920EA0A6B005D1DAD /* AppDelegate.h */,
 				C710DF8A20EA0A6B005D1DAD /* AppDelegate.m */,
 				C710DF8C20EA0A6B005D1DAD /* ViewController.h */,
@@ -69,6 +81,26 @@
 				C710DF9820EA0A6C005D1DAD /* main.m */,
 			);
 			path = WXWebBrowser;
+			sourceTree = "<group>";
+		};
+		C710DF9F20EB2761005D1DAD /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				C710DFA220EB279E005D1DAD /* WXWebBrowser.h */,
+				C710DFA320EB279E005D1DAD /* WXWebBrowser.m */,
+				C710DFA120EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h */,
+				C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
+		C710DFA020EB2786005D1DAD /* htmlResources */ = {
+			isa = PBXGroup;
+			children = (
+				C710DFA920EB27DF005D1DAD /* testLocalWebview.html */,
+				C710DFA720EB27CA005D1DAD /* WKJSPOST.html */,
+			);
+			path = htmlResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C710DF9620EA0A6C005D1DAD /* LaunchScreen.storyboard in Resources */,
+				C710DFA820EB27CA005D1DAD /* WKJSPOST.html in Resources */,
 				C710DF9320EA0A6C005D1DAD /* Assets.xcassets in Resources */,
 				C710DF9120EA0A6B005D1DAD /* Main.storyboard in Resources */,
+				C710DFAA20EB27DF005D1DAD /* testLocalWebview.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +177,9 @@
 			files = (
 				C710DF8E20EA0A6B005D1DAD /* ViewController.m in Sources */,
 				C710DF9920EA0A6C005D1DAD /* main.m in Sources */,
+				C710DFA520EB279E005D1DAD /* WXWebBrowser.m in Sources */,
 				C710DF8B20EA0A6B005D1DAD /* AppDelegate.m in Sources */,
+				C710DFA620EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYFVDC483X;
 				INFOPLIST_FILE = WXWebBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYFVDC483X;
 				INFOPLIST_FILE = WXWebBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
