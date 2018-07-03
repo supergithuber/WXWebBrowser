@@ -57,7 +57,6 @@ static void *kProgressViewContext = &kProgressViewContext;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self.wkWebView.configuration.userContentController addScriptMessageHandler:self name:kScriptMessageHandlerFirstKey];
     if (_isNavigationHidden){
         self.navigationController.navigationBarHidden = NO;
         //加一个自定义的状态栏
@@ -71,7 +70,6 @@ static void *kProgressViewContext = &kProgressViewContext;
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:kScriptMessageHandlerFirstKey];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

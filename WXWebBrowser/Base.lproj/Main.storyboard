@@ -29,11 +29,24 @@
                                     <action selector="openWebview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XwL-li-G6V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-og-pDZ">
+                                <rect key="frame" x="112" y="445.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BXa-Yz-Ghi"/>
+                                    <constraint firstAttribute="width" constant="150" id="ZuF-KE-Qbf"/>
+                                </constraints>
+                                <state key="normal" title="open local"/>
+                                <connections>
+                                    <action selector="openLocal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJy-FZ-VWq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3nX-og-pDZ" firstAttribute="leading" secondItem="S0R-Nq-LAG" secondAttribute="leading" id="Be5-Vu-KlI"/>
                             <constraint firstItem="S0R-Nq-LAG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Pzh-Gz-lDv"/>
                             <constraint firstItem="S0R-Nq-LAG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T7I-DS-JZX"/>
+                            <constraint firstItem="3nX-og-pDZ" firstAttribute="top" secondItem="S0R-Nq-LAG" secondAttribute="top" constant="100" id="yz2-Ak-xCy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

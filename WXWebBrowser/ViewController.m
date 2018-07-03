@@ -31,6 +31,11 @@
     [webView loadRemoteURLString:@"https://www.baidu.com"];
     [self.navigationController pushViewController:webView animated:true];
 }
+- (IBAction)openLocal:(UIButton *)sender {
+    WXWebBrowser *webView = [WXWebBrowser new];
+    [webView loadLocalHTMLString:@"testLocalWebview"];
+    [self.navigationController pushViewController:webView animated:true];
+}
 
 
 @end
