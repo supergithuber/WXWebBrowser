@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign)BOOL isNavigationHidden;
 @property (nonatomic, strong)UIColor *progressColor;
+@property (nonatomic, copy)NSString *userAgent;   //请求头中User-Agent中的信息
 
 
 /**

@@ -299,7 +299,11 @@ static void *kProgressViewContext = &kProgressViewContext;
 - (WKWebView *)wkWebView{
     if (!_wkWebView){
         WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
-        configuration.allowsInlineMediaPlayback = YES;  //允许在线播放视频
+        configuration.allowsInlineMediaPlayback = YES;  //允许在线播放视频，用h5
+        configuration.allowsPictureInPictureMediaPlayback = YES;   //是否允许画中画播放视频
+        if (_userAgent){
+            configuration.applicationNameForUserAgent = _userAgent;
+        }
         configuration.allowsAirPlayForMediaPlayback = YES;  //是否允许AirPlay
         configuration.selectionGranularity = WKSelectionGranularityCharacter;  //选择粒度
         configuration.processPool = [WKProcessPool new];  //https://developer.apple.com/documentation/webkit/wkprocesspool
