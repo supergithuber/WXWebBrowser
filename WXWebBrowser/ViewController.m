@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WXWebBrowser.h"
 
 @interface ViewController ()
 
@@ -16,13 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)openWebview:(UIButton *)sender {
+    WXWebBrowser *webView = [WXWebBrowser new];
+    [webView loadRemoteURLString:@"https://www.baidu.com"];
+    [self.navigationController pushViewController:webView animated:true];
 }
 
 

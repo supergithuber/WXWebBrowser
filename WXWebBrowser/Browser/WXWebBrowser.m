@@ -52,11 +52,12 @@ static void *kProgressViewContext = &kProgressViewContext;
     
     [self setupView];
     [self loadPages];
+    [self updateNavigationItems];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+//    [self.wkWebView.configuration.userContentController addScriptMessageHandler:self name:kScriptMessageHandlerFirstKey];
     if (_isNavigationHidden){
         self.navigationController.navigationBarHidden = NO;
         //加一个自定义的状态栏
@@ -66,6 +67,11 @@ static void *kProgressViewContext = &kProgressViewContext;
     }else{
         self.navigationController.navigationBarHidden = NO;
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+//    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:kScriptMessageHandlerFirstKey];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -300,14 +306,14 @@ static void *kProgressViewContext = &kProgressViewContext;
         configuration.selectionGranularity = WKSelectionGranularityCharacter;  //选择粒度
         configuration.processPool = [WKProcessPool new];  //https://developer.apple.com/documentation/webkit/wkprocesspool
         configuration.suppressesIncrementalRendering = YES;  //（压制增量渲染）是否全部加载到内存里，才会去渲染
-        //添加脚本信息处理者，需要实现WKScriptMessageHandler这个协议,另外一个类主要是解决wkwebkit的bug，不会释放的问题
+        //添加脚本信息处理者，需要实现WKScriptMessageHandler这个协议。放在viewwillappear里加，viewwilldisappear里移除，另外一个类主要是解决wkwebkit的bug，不会释放的问题
         //WKUserContentController是用来给给JS注入对象的，之后JS端就可以使用
         //window.webkit.messageHandlers.scriptMessageHandlerFirstKey.postMessage({body: '传数据'})来传数据
         //传数据NSNumber, NSString, NSDate, NSArray,NSDictionary, and NSNull这些类型
         //JS调用完后，我们可以在代理里收到数据
         WKUserContentController *contentController = [[WKUserContentController alloc] init];
-        [contentController addScriptMessageHandler:[[WXWebBrowserScriptMeaasgeDelegate alloc] initWithDelegate:self] name:kScriptMessageHandlerFirstKey];
         configuration.userContentController = contentController;
+        [configuration.userContentController addScriptMessageHandler:[[WXWebBrowserScriptMeaasgeDelegate alloc] initWithDelegate:self] name:kScriptMessageHandlerFirstKey];
         
         _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
         _wkWebView.UIDelegate = self;
