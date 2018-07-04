@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "WXWebBrowser.h"
+#import <WebBrowser/WebBrowser.h>
 
 @interface ViewController ()
 

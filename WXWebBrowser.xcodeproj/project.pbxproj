@@ -13,11 +13,43 @@
 		C710DF9320EA0A6C005D1DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DF9220EA0A6C005D1DAD /* Assets.xcassets */; };
 		C710DF9620EA0A6C005D1DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C710DF9420EA0A6C005D1DAD /* LaunchScreen.storyboard */; };
 		C710DF9920EA0A6C005D1DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DF9820EA0A6C005D1DAD /* main.m */; };
-		C710DFA520EB279E005D1DAD /* WXWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA320EB279E005D1DAD /* WXWebBrowser.m */; };
-		C710DFA620EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */; };
 		C710DFA820EB27CA005D1DAD /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA720EB27CA005D1DAD /* WKJSPOST.html */; };
 		C710DFAA20EB27DF005D1DAD /* testLocalWebview.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA920EB27DF005D1DAD /* testLocalWebview.html */; };
+		C710DFB420EC7315005D1DAD /* WebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = C710DFB220EC7315005D1DAD /* WebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C710DFB720EC7315005D1DAD /* WebBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C710DFB020EC7315005D1DAD /* WebBrowser.framework */; };
+		C710DFB820EC7315005D1DAD /* WebBrowser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C710DFB020EC7315005D1DAD /* WebBrowser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C710DFBD20EC7471005D1DAD /* WXWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = C710DFA220EB279E005D1DAD /* WXWebBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C710DFBE20EC747E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C710DFA120EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C710DFBF20EC7489005D1DAD /* WXWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA320EB279E005D1DAD /* WXWebBrowser.m */; };
+		C710DFC020EC7489005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */; };
+		C710DFC320EC74BA005D1DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DF9220EA0A6C005D1DAD /* Assets.xcassets */; };
+		C710DFCF20EC79B3005D1DAD /* testLocalWebview.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA920EB27DF005D1DAD /* testLocalWebview.html */; };
+		C710DFD020EC79B3005D1DAD /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA720EB27CA005D1DAD /* WKJSPOST.html */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C710DFB520EC7315005D1DAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C710DF7E20EA0A6B005D1DAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C710DFAF20EC7315005D1DAD;
+			remoteInfo = WebBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C710DFBC20EC7315005D1DAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C710DFB820EC7315005D1DAD /* WebBrowser.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C710DF8620EA0A6B005D1DAD /* WXWebBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXWebBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,10 +68,21 @@
 		C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXWebBrowserScriptMeaasgeDelegate.m; sourceTree = "<group>"; };
 		C710DFA720EB27CA005D1DAD /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
 		C710DFA920EB27DF005D1DAD /* testLocalWebview.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testLocalWebview.html; sourceTree = "<group>"; };
+		C710DFB020EC7315005D1DAD /* WebBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C710DFB220EC7315005D1DAD /* WebBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
+		C710DFB320EC7315005D1DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C710DF8320EA0A6B005D1DAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C710DFB720EC7315005D1DAD /* WebBrowser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C710DFAC20EC7315005D1DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C710DF8820EA0A6B005D1DAD /* WXWebBrowser */,
+				C710DFB120EC7315005D1DAD /* WebBrowser */,
 				C710DF8720EA0A6B005D1DAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				C710DF8620EA0A6B005D1DAD /* WXWebBrowser.app */,
+				C710DFB020EC7315005D1DAD /* WebBrowser.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +148,29 @@
 			path = htmlResources;
 			sourceTree = "<group>";
 		};
+		C710DFB120EC7315005D1DAD /* WebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C710DFB220EC7315005D1DAD /* WebBrowser.h */,
+				C710DFB320EC7315005D1DAD /* Info.plist */,
+			);
+			path = WebBrowser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C710DFAD20EC7315005D1DAD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C710DFB420EC7315005D1DAD /* WebBrowser.h in Headers */,
+				C710DFBD20EC7471005D1DAD /* WXWebBrowser.h in Headers */,
+				C710DFBE20EC747E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C710DF8520EA0A6B005D1DAD /* WXWebBrowser */ = {
@@ -113,15 +180,35 @@
 				C710DF8220EA0A6B005D1DAD /* Sources */,
 				C710DF8320EA0A6B005D1DAD /* Frameworks */,
 				C710DF8420EA0A6B005D1DAD /* Resources */,
+				C710DFBC20EC7315005D1DAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C710DFB620EC7315005D1DAD /* PBXTargetDependency */,
 			);
 			name = WXWebBrowser;
 			productName = WXWebBrowser;
 			productReference = C710DF8620EA0A6B005D1DAD /* WXWebBrowser.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C710DFAF20EC7315005D1DAD /* WebBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C710DFBB20EC7315005D1DAD /* Build configuration list for PBXNativeTarget "WebBrowser" */;
+			buildPhases = (
+				C710DFAB20EC7315005D1DAD /* Sources */,
+				C710DFAC20EC7315005D1DAD /* Frameworks */,
+				C710DFAD20EC7315005D1DAD /* Headers */,
+				C710DFAE20EC7315005D1DAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebBrowser;
+			productName = WebBrowser;
+			productReference = C710DFB020EC7315005D1DAD /* WebBrowser.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -133,6 +220,9 @@
 				ORGANIZATIONNAME = wuxi;
 				TargetAttributes = {
 					C710DF8520EA0A6B005D1DAD = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					C710DFAF20EC7315005D1DAD = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -151,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				C710DF8520EA0A6B005D1DAD /* WXWebBrowser */,
+				C710DFAF20EC7315005D1DAD /* WebBrowser */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +259,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C710DFAE20EC7315005D1DAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C710DFCF20EC79B3005D1DAD /* testLocalWebview.html in Resources */,
+				C710DFD020EC79B3005D1DAD /* WKJSPOST.html in Resources */,
+				C710DFC320EC74BA005D1DAD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -177,13 +278,28 @@
 			files = (
 				C710DF8E20EA0A6B005D1DAD /* ViewController.m in Sources */,
 				C710DF9920EA0A6C005D1DAD /* main.m in Sources */,
-				C710DFA520EB279E005D1DAD /* WXWebBrowser.m in Sources */,
 				C710DF8B20EA0A6B005D1DAD /* AppDelegate.m in Sources */,
-				C710DFA620EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C710DFAB20EC7315005D1DAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C710DFBF20EC7489005D1DAD /* WXWebBrowser.m in Sources */,
+				C710DFC020EC7489005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C710DFB620EC7315005D1DAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C710DFAF20EC7315005D1DAD /* WebBrowser */;
+			targetProxy = C710DFB520EC7315005D1DAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C710DF8F20EA0A6B005D1DAD /* Main.storyboard */ = {
@@ -351,6 +467,62 @@
 			};
 			name = Release;
 		};
+		C710DFB920EC7315005D1DAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KYFVDC483X;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WebBrowser/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.webbrowser.WebBrowser;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C710DFBA20EC7315005D1DAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KYFVDC483X;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WebBrowser/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.webbrowser.WebBrowser;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +540,15 @@
 			buildConfigurations = (
 				C710DF9D20EA0A6C005D1DAD /* Debug */,
 				C710DF9E20EA0A6C005D1DAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C710DFBB20EC7315005D1DAD /* Build configuration list for PBXNativeTarget "WebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C710DFB920EC7315005D1DAD /* Debug */,
+				C710DFBA20EC7315005D1DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
