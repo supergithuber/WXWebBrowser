@@ -336,7 +336,8 @@ static void *kProgressViewContext = &kProgressViewContext;
 - (UIBarButtonItem *)backBarButtonItem {
     if (!_backBarButtonItem){
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setImage:[UIImage imageNamed:@"navigation-back"] forState:UIControlStateNormal];
+        UIImage *image = [UIImage imageNamed:@"navigation-back" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+        [backButton setImage:image forState:UIControlStateNormal];
         [backButton addTarget:self action:@selector(backWebview) forControlEvents:UIControlEventTouchUpInside];
         
         _backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];

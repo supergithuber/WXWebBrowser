@@ -22,9 +22,10 @@
 		C710DFBE20EC747E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C710DFA120EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C710DFBF20EC7489005D1DAD /* WXWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA320EB279E005D1DAD /* WXWebBrowser.m */; };
 		C710DFC020EC7489005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFA420EB279E005D1DAD /* WXWebBrowserScriptMeaasgeDelegate.m */; };
-		C710DFC320EC74BA005D1DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DF9220EA0A6C005D1DAD /* Assets.xcassets */; };
 		C710DFCF20EC79B3005D1DAD /* testLocalWebview.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA920EB27DF005D1DAD /* testLocalWebview.html */; };
 		C710DFD020EC79B3005D1DAD /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = C710DFA720EB27CA005D1DAD /* WKJSPOST.html */; };
+		C710DFD620ECA542005D1DAD /* Browser.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DFD520ECA542005D1DAD /* Browser.xcassets */; };
+		C710DFD720ECA598005D1DAD /* Browser.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DFD520ECA542005D1DAD /* Browser.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C710DFB020EC7315005D1DAD /* WebBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C710DFB220EC7315005D1DAD /* WebBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		C710DFB320EC7315005D1DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C710DFD520ECA542005D1DAD /* Browser.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Browser.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		C710DF8820EA0A6B005D1DAD /* WXWebBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				C710DFD420ECA520005D1DAD /* Resources */,
 				C710DFA020EB2786005D1DAD /* htmlResources */,
 				C710DF9F20EB2761005D1DAD /* Browser */,
 				C710DF8920EA0A6B005D1DAD /* AppDelegate.h */,
@@ -155,6 +158,14 @@
 				C710DFB320EC7315005D1DAD /* Info.plist */,
 			);
 			path = WebBrowser;
+			sourceTree = "<group>";
+		};
+		C710DFD420ECA520005D1DAD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C710DFD520ECA542005D1DAD /* Browser.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 				C710DFA820EB27CA005D1DAD /* WKJSPOST.html in Resources */,
 				C710DF9320EA0A6C005D1DAD /* Assets.xcassets in Resources */,
 				C710DF9120EA0A6B005D1DAD /* Main.storyboard in Resources */,
+				C710DFD620ECA542005D1DAD /* Browser.xcassets in Resources */,
 				C710DFAA20EB27DF005D1DAD /* testLocalWebview.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C710DFD720ECA598005D1DAD /* Browser.xcassets in Resources */,
 				C710DFCF20EC79B3005D1DAD /* testLocalWebview.html in Resources */,
 				C710DFD020EC79B3005D1DAD /* WKJSPOST.html in Resources */,
-				C710DFC320EC74BA005D1DAD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
