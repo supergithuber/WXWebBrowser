@@ -29,8 +29,9 @@
  */
 - (void)loadLocalHTMLString:(NSString *)string;
 /**
- 加载外部链接POST请求,本质上是通过先加载本地的一个html，在finish的时候注入以下数据，所以本地需要一个文件WKJSPOST.html
- postData请求块 注意格式：@"\"username\":\"xxxx\",\"password\":\"xxxx\""
+ 1. 加载外部链接POST请求,本质上是通过先加载本地的一个html，在finish的时候注入以下数据，所以本地需要一个文件WKJSPOST.html
+ 2. postData请求块 注意格式：@"\"username\":\"xxxx\",\"password\":\"xxxx\""
+ 3. 在js里添加了支持弹窗的script，postData格式：@"你要显示的信息"  (先关闭)
  
  @param string 需要POST的URL地址
  @param postData post请求块

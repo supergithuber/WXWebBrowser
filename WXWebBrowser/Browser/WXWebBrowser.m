@@ -115,13 +115,18 @@ static void *kProgressViewContext = &kProgressViewContext;
 - (void)loadHostPathURL:(NSString *)url{
     NSString *path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
     NSString *html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [self.wkWebView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+    [self.wkWebView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];  //baseURL:资源文件对应的路径，例如css、img、js，js文件要放到copy bundle resources中
 }
 - (void)postRequestWithJS {
     // 拼装成调用JavaScript的字符串
     NSString *jscript = [NSString stringWithFormat:@"post('%@',{%@});", self.URLString, self.postData];
+//    NSString *newJSscript = [NSString stringWithFormat:@"alertAction('%@', '%@')", self.URLString, self.postData];
     // 调用JS代码
+//    [self.wkWebView evaluateJavaScript:newJSscript completionHandler:^(id object, NSError * _Nullable error) {
+//
+//    }];
     [self.wkWebView evaluateJavaScript:jscript completionHandler:^(id object, NSError * _Nullable error) {
+        
     }];
 }
 //MARK: - Action
@@ -175,6 +180,7 @@ static void *kProgressViewContext = &kProgressViewContext;
     }
 }
 //MARK: - WKScriptMessageHandler
+//当js端调用：window.webkit.messageHandlers.scriptMessageHandlerFirstKey.postMessage({body: '传数据'})的时候，会进入到这里，在这里可以调用oc方法
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     if ([message.name isEqualToString:kScriptMessageHandlerFirstKey]){
         NSLog(@"name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n",message.name,message.body,message.frameInfo);
@@ -308,7 +314,7 @@ static void *kProgressViewContext = &kProgressViewContext;
         configuration.selectionGranularity = WKSelectionGranularityCharacter;  //选择粒度
         configuration.processPool = [WKProcessPool new];  //https://developer.apple.com/documentation/webkit/wkprocesspool
         configuration.suppressesIncrementalRendering = YES;  //（压制增量渲染）是否全部加载到内存里，才会去渲染
-        //添加脚本信息处理者，需要实现WKScriptMessageHandler这个协议。放在viewwillappear里加，viewwilldisappear里移除，另外一个类主要是解决wkwebkit的bug，不会释放的问题
+        //添加脚本信息处理者，需要实现WKScriptMessageHandler这个协议。代理不用self，用WXWebBrowserScriptMeaasgeDelegate，是为了解决不会释放的问题
         //WKUserContentController是用来给给JS注入对象的，之后JS端就可以使用
         //window.webkit.messageHandlers.scriptMessageHandlerFirstKey.postMessage({body: '传数据'})来传数据
         //传数据NSNumber, NSString, NSDate, NSArray,NSDictionary, and NSNull这些类型

@@ -23,6 +23,19 @@
                 form.submit();
             }
         </script>
+        <script>
+            function alertAction(path, message) {
+                var method = "post";
+                var form = document.createElement("form");
+                form.setAttribute("method", method);
+                form.setAttribute("action", path);
+                
+                document.body.appendChild(form);
+                form.submit();
+                
+                alert(message);
+            }
+        </script>
     </head>
     <body>
     </body>

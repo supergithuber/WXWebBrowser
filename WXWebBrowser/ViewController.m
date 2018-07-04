@@ -36,6 +36,11 @@
     [webView loadLocalHTMLString:@"testLocalWebview"];
     [self.navigationController pushViewController:webView animated:true];
 }
+- (IBAction)injectJS:(UIButton *)sender {
+    WXWebBrowser *webView = [WXWebBrowser new];
+    [webView postWebURLSring:@"https://www.baidu.com" postData:@"\"username\":\"xxxx\""];
+    [self.navigationController pushViewController:webView animated:YES];
+}
 
 
 @end

@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-og-pDZ">
-                                <rect key="frame" x="112" y="445.5" width="150" height="40"/>
+                                <rect key="frame" x="112" y="395.5" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BXa-Yz-Ghi"/>
                                     <constraint firstAttribute="width" constant="150" id="ZuF-KE-Qbf"/>
@@ -40,13 +40,26 @@
                                     <action selector="openLocal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJy-FZ-VWq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6U-ex-1SX">
+                                <rect key="frame" x="112" y="445.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ivq-fy-vl5"/>
+                                    <constraint firstAttribute="height" constant="40" id="oSW-e0-u0g"/>
+                                </constraints>
+                                <state key="normal" title="inject js"/>
+                                <connections>
+                                    <action selector="injectJS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CNo-qJ-P3G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3nX-og-pDZ" firstAttribute="leading" secondItem="S0R-Nq-LAG" secondAttribute="leading" id="Be5-Vu-KlI"/>
                             <constraint firstItem="S0R-Nq-LAG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Pzh-Gz-lDv"/>
+                            <constraint firstItem="H6U-ex-1SX" firstAttribute="top" secondItem="S0R-Nq-LAG" secondAttribute="top" constant="100" id="QIb-oh-WPE"/>
                             <constraint firstItem="S0R-Nq-LAG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T7I-DS-JZX"/>
-                            <constraint firstItem="3nX-og-pDZ" firstAttribute="top" secondItem="S0R-Nq-LAG" secondAttribute="top" constant="100" id="yz2-Ak-xCy"/>
+                            <constraint firstItem="H6U-ex-1SX" firstAttribute="leading" secondItem="S0R-Nq-LAG" secondAttribute="leading" id="fiq-Zg-7xO"/>
+                            <constraint firstItem="3nX-og-pDZ" firstAttribute="top" secondItem="S0R-Nq-LAG" secondAttribute="top" constant="50" id="yz2-Ak-xCy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -54,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="-667"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="-667.01649175412297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="flI-1e-T3C">
