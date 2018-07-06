@@ -78,8 +78,10 @@ static void *kProgressViewContext = &kProgressViewContext;
 - (void)setupView {
     [self.view addSubview:self.wkWebView];
     [self.view addSubview:self.progressView];
-    UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadLoadClicked)];
-    self.navigationItem.rightBarButtonItem = roadLoad;
+    
+    UIBarButtonItem *reLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadLoadClicked)];
+    reLoad.tintColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = reLoad;
 }
 - (void)loadPages {
     switch (self.loadType) {
@@ -346,7 +348,12 @@ static void *kProgressViewContext = &kProgressViewContext;
 }
 - (UIBarButtonItem *)closeBarButtonItem {
     if (!_closeBarButtonItem){
-        _closeBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-close"] style:UIBarButtonItemStylePlain target:self action:@selector(closeWebview)];
+        UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *image = [UIImage imageNamed:@"navigation-close" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+        [closeButton setImage:image forState:UIControlStateNormal];
+        [closeButton addTarget:self action:@selector(closeWebview) forControlEvents:UIControlEventTouchUpInside];
+        
+        _closeBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
     }
     return _closeBarButtonItem;
 }
