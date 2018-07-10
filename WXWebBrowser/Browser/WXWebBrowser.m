@@ -203,8 +203,10 @@ static void *kProgressViewContext = &kProgressViewContext;
 //MARK: - WKNavigationDelegate
 //页面开始加载时
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    
     self.progressView.hidden = NO;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewStarToLoad:)]){
+        [self.delegate webViewStarToLoad:self];
+    }
 }
 //当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{

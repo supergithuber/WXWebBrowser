@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WXWebBrowser;
+@protocol WXWebBrowserProtocol<NSObject>
+//页面开始加载时
+@optional
+- (void)webViewStarToLoad:(WXWebBrowser *)webBrowser;
+
+@end
 
 @interface WXWebBrowser : UIViewController
 
 @property (nonatomic, assign)BOOL isNavigationHidden;
 @property (nonatomic, strong)UIColor *progressColor;
 @property (nonatomic, copy)NSString *userAgent;   //请求头中User-Agent中的信息
+
+@property (nonatomic, weak)id<WXWebBrowserProtocol> delegate;
 
 
 /**
