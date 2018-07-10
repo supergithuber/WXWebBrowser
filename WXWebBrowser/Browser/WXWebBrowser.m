@@ -79,9 +79,12 @@ static void *kProgressViewContext = &kProgressViewContext;
     [self.view addSubview:self.wkWebView];
     [self.view addSubview:self.progressView];
     
-    UIBarButtonItem *reLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadLoadClicked)];
+    UIBarButtonItem* reLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadLoadClicked)];
+    UIBarButtonItem* menuItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(menuClicked)];
     reLoad.tintColor = [UIColor blackColor];
-    self.navigationItem.rightBarButtonItem = reLoad;
+    menuItem.tintColor = [UIColor blackColor];
+    
+    self.navigationItem.rightBarButtonItems = @[menuItem, reLoad];
 }
 - (void)loadPages {
     switch (self.loadType) {
@@ -134,6 +137,15 @@ static void *kProgressViewContext = &kProgressViewContext;
 //MARK: - Action
 - (void)roadLoadClicked {
     [self.wkWebView reload];
+}
+
+- (void)menuClicked {
+    if (self.wkWebView.URL){
+        UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[self.wkWebView.URL] applicationActivities:nil];
+        [self presentViewController:controller animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)closeWebview {
