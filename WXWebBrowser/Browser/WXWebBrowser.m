@@ -53,6 +53,7 @@ static void *kProgressViewContext = &kProgressViewContext;
     [self setupView];
     [self loadPages];
     [self updateNavigationItems];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -175,6 +176,26 @@ static void *kProgressViewContext = &kProgressViewContext;
     self.postData = postData;
     self.loadType = WXWebBrowserLoadTypePostURLString;
 }
+- (void)snapShotRect:(CGRect)rect completion:(void(^)(UIImage*, NSError*))completion{
+    if (@available(iOS 11.0, *)) {
+        if (!CGRectEqualToRect(rect, CGRectZero)){
+            WKSnapshotConfiguration *configuration = [WKSnapshotConfiguration new];
+            configuration.rect = rect;
+            [self.wkWebView takeSnapshotWithConfiguration:configuration completionHandler:^(UIImage * _Nullable snapshotImage, NSError * _Nullable error) {
+                completion(snapshotImage, error);
+            }];
+        }else{
+            [self.wkWebView takeSnapshotWithConfiguration:nil completionHandler:^(UIImage * _Nullable snapshotImage, NSError * _Nullable error) {
+                completion(snapshotImage, error);
+            }];
+        }
+        
+    } else {
+        NSError *error = [[NSError alloc] initWithDomain:@"com.wxwebbrowser" code:-999 userInfo:@{NSLocalizedDescriptionKey:@"ios11 available"}];
+        completion(nil, error);
+    }
+    
+}
 //MARK: - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]){
@@ -248,7 +269,9 @@ static void *kProgressViewContext = &kProgressViewContext;
 //}
 // 在发送请求之前，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    //可以依据:navigationAction.request.URL.host来决定是否要跳转
     NSLog(@"在发送请求之前，决定是否跳转");
+    //有回退，刷新等
     switch (navigationAction.navigationType) {
         case WKNavigationTypeLinkActivated:
             break;

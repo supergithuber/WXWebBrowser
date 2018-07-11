@@ -49,4 +49,13 @@
  @param postData post请求块
  */
 - (void)postWebURLSring:(NSString *)string postData:(NSString *)postData;
+
+//help function
+
+/**
+ snapShot image, @available ios 11
+ @param rect pass CGRectZero for full ios screen
+ */
+- (void)snapShotRect:(CGRect)rect completion:(void(^)(UIImage*, NSError*))completion;
+
 @end
