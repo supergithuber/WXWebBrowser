@@ -210,11 +210,15 @@ static void *kProgressViewContext = &kProgressViewContext;
 }
 //当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-    NSLog(@"内容开始返回");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(contentsStartToReturn:)]){
+        [self.delegate contentsStartToReturn:self];
+    }
 }
 //页面加载完成
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    NSLog(@"页面加载完成");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewLoadFinished:)]){
+        [self.delegate webViewLoadFinished:self];
+    }
     //当网页的内容全部显示（网页内的所有图片必须都正常显示）的时候调用（不是出现的时候就调用），部分显示时这个方法就不调用
     // 判断是否需要加载（仅在第一次加载）
     if (self.needLoadJSPOST) {

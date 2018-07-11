@@ -12,6 +12,8 @@
 //页面开始加载时
 @optional
 - (void)webViewStarToLoad:(WXWebBrowser *)webBrowser;
+- (void)contentsStartToReturn:(WXWebBrowser *)webBrowser;
+- (void)webViewLoadFinished:(WXWebBrowser *)webBrowser;
 
 @end
 
