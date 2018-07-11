@@ -353,8 +353,8 @@ static void *kProgressViewContext = &kProgressViewContext;
         WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
         configuration.allowsInlineMediaPlayback = YES;  //允许在线播放视频，用h5
         configuration.allowsPictureInPictureMediaPlayback = YES;   //是否允许画中画播放视频
-        if (_userAgent){
-            configuration.applicationNameForUserAgent = _userAgent;
+        if (_applicationNameUserAgent){
+            configuration.applicationNameForUserAgent = _applicationNameUserAgent;
         }
         configuration.allowsAirPlayForMediaPlayback = YES;  //是否允许AirPlay
         configuration.selectionGranularity = WKSelectionGranularityCharacter;  //选择粒度

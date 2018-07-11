@@ -22,7 +22,7 @@
 
 @property (nonatomic, assign)BOOL isNavigationHidden;
 @property (nonatomic, strong)UIColor *progressColor;
-@property (nonatomic, copy)NSString *userAgent;   //请求头中User-Agent中的信息
+@property (nonatomic, copy)NSString *applicationNameUserAgent;   //请求头中APP名字的User-Agent中的信息
 
 @property (nonatomic, weak)id<WXWebBrowserProtocol> delegate;
 
