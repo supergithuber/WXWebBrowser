@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 @class WXWebBrowser;
 @protocol WXWebBrowserProtocol<NSObject>
-//页面开始加载时
+
 @optional
-- (void)webViewStarToLoad:(WXWebBrowser *)webBrowser;
-- (void)contentsStartToReturn:(WXWebBrowser *)webBrowser;
-- (void)webViewLoadFinished:(WXWebBrowser *)webBrowser;
+- (void)webViewStarToLoad:(WXWebBrowser *)webBrowser;//页面开始加载
+- (void)contentsStartToReturn:(WXWebBrowser *)webBrowser;//内容开始返回
+- (void)webViewLoadFinished:(WXWebBrowser *)webBrowser;//内容加载完成
+- (void)webView:(WXWebBrowser *)webBrowser Loadfailed:(NSError *)error;//页面加载失败
 
 @end
 

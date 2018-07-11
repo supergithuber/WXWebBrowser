@@ -233,6 +233,9 @@ static void *kProgressViewContext = &kProgressViewContext;
 }
 //页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:Loadfailed:)]){
+        [self.delegate webView:self Loadfailed:error];
+    }
     NSLog(@"页面加载失败%@", error);
 }
 //接收到服务器跳转请求之后调用
