@@ -119,9 +119,9 @@ static void *kProgressViewContext = &kProgressViewContext;
     }
 }
 - (void)loadHostPathURL:(NSString *)url{
-    NSString *path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
+    NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:url ofType:@"html"];
     NSString *html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [self.wkWebView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];  //baseURL:资源文件对应的路径，例如css、img、js，js文件要放到copy bundle resources中
+    [self.wkWebView loadHTMLString:html baseURL:[[NSBundle bundleForClass:[self class]] bundleURL]];  //baseURL:资源文件对应的路径，例如css、img、js，js文件要放到copy bundle resources中
 }
 - (void)postRequestWithJS {
     // 拼装成调用JavaScript的字符串
